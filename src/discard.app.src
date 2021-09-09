@@ -1,0 +1,21 @@
+{application, discard, [
+	{description, "A discard service, RFC 863"},
+	{vsn, "0.1.0"},
+	{mod, {discard, []}},
+	{registered, []},
+	{applications, [
+		kernel,
+		stdlib
+	]},
+	{env,[
+		{port, 9009},	% RFC 863 port 9
+		{workers, 5}
+	]},
+	{modules, [
+		discard,
+		discard_sup,
+		discard_server
+	]},
+	{licenses, ["MIT"]},
+	{links, []}
+]}.
